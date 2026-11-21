@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#131517" />
+    <meta name="description" content="Pitihflow - Pencatatan Aliran Keuangan Pribadi Mewah & Mandiri" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Cormorant Garamond (Editorial Serif Mewah) & Inter (Clean Body Grotesque) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Pitihflow</title>
+    <script>
+      // Automatically purge Netlify deploy preview feedback badge / drawer
+      const purgeNetlifyDrawer = () => {
+        const badges = document.querySelectorAll(
+          '#netlify-drawer, [data-netlify-drawer], .netlify-badge, iframe[title*="Netlify"], div[class*="netlify-drawer"], div[class*="netlify-feedback"], netlify-drawer'
+        );
+        badges.forEach(el => el.remove());
+      };
+      if (typeof window !== 'undefined') {
+        const obs = new MutationObserver(purgeNetlifyDrawer);
+        obs.observe(document.documentElement, { childList: true, subtree: true });
+        window.addEventListener('DOMContentLoaded', purgeNetlifyDrawer);
+        window.addEventListener('load', purgeNetlifyDrawer);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
